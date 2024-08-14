@@ -58,17 +58,17 @@ class Book {
   stack.print();
   
   console.log("Top Book:");
-  console.log(`Name: ${stack.peek().title}`);
+  console.log(`Name: ${stack.peek().name}`);
   console.log(`ISBN: ${stack.peek().isbn}`);
   console.log(`Author: ${stack.peek().author}`);
-  console.log(`Editorial: ${stack.peek().publisher}`);
+  console.log(`Editorial: ${stack.peek().editorial}`);
   
   let removedBook = stack.pop();
   console.log("Removed Book:");
-  console.log(`Name: ${removedBook.title}`);
+  console.log(`Name: ${removedBook.name}`);
   console.log(`ISBN: ${removedBook.isbn}`);
   console.log(`Author: ${removedBook.author}`);
-  console.log(`Editotial: ${removedBook.publisher}`);
+  console.log(`Editotial: ${removedBook.editorial}`);
   
   console.log(stack.size()); // 2
   
