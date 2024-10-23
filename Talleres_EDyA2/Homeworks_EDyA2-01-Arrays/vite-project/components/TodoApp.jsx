@@ -1,19 +1,21 @@
-import { useReducer } from 'react'
-import { TodoReducer } from './TodoReducer'
+import { useState } from 'react';
+import TodoList from './TodoList';
+import TodoForm from './TodoForm';
 
-const initialState = [{
-    id: new Date().getTime(),
-    description: 'Hacer los challenges',
-    done: false
-}]
+const TodoApp = () => {
+  const [todos, setTodos] = useState([]);
 
-export const TodoApp = () => {
-    const [todos, dispatchTodo]= useReducer(TodoReducer, initialState)
+  const addTodo = (newTodo) => {
+    setTodos([...todos, newTodo]); // Add new todo to the list
+  };
 
-    return(
-        <>
-        <h1>TodoApp</h1>
-        <hr/>
-        </>
-    )
-}
+  return (
+    <div>
+      <h1>Todo App</h1>
+      <TodoForm addTodo={addTodo} />
+      <TodoList todos={todos} />
+    </div>
+  );
+};
+
+export default TodoApp;
