@@ -1,16 +1,20 @@
-// firebase/config.js
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getAnalytics } from "firebase/analytics";
+import { getauth } from 'firebase/auth'
 
 const firebaseConfig = {
-  apiKey: "YOUR_FIREBASE_API_KEY",
-  authDomain: "YOUR_FIREBASE_AUTH_DOMAIN",
-  projectId: "YOUR_FIREBASE_PROJECT_ID",
-  storageBucket: "YOUR_FIREBASE_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_FIREBASE_APP_ID",
+  apiKey: "AIzaSyAF-DgEpsThmCtwlCJucjWOnrMHZeXhAco",
+  authDomain: "challenges-cff09.firebaseapp.com",
+  projectId: "challenges-cff09",
+  storageBucket: "challenges-cff09.firebasestorage.app",
+  messagingSenderId: "839079211560",
+  appId: "1:839079211560:web:fcbc6531249ee9c6ba3b1d",
+  measurementId: "G-S1N7FY48KZ"
 };
 
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
-export const googleProvider = new GoogleAuthProvider();
+const analytics = getAnalytics(app);
+const auth = getauth()
+
+export {analytics, app, auth}
+
